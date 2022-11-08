@@ -3,12 +3,16 @@ package com.notificationservice.service;
 import com.notificationservice.entity.UserInfoEntity;
 import com.notificationservice.model.InputModel;
 import com.notificationservice.repository.UserInfoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
 
+@Service
 public class DynamoDbService {
 
-    UserInfoRepository userInfoRepository = new UserInfoRepository();
+    @Autowired
+    UserInfoRepository userInfoRepository;//= new UserInfoRepository();
 
     public void saveData(InputModel inputModel) {
         UserInfoEntity userInfoEntity = new UserInfoEntity();

@@ -7,11 +7,18 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.model.*;
 import com.notificationservice.model.InputModel;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmailService {
 
-    private static String ACCESS_KEY = "AKIA4QBN6MKLGDKTOSPI";
-    private static String SECRET_KEY = "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";
+
+   // @Value("${aws.access.key}")
+    private String ACCESS_KEY = "AKIA4QBN6MKLHKXGP7GQ";
+
+   // @Value("${aws.secret.key}")
+    private String SECRET_KEY = "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";
 
     public String sendEmail(InputModel inputModel){
        // LambdaLogger logger = context.getLogger();
